@@ -1,0 +1,45 @@
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: "Arial Black", sans-serif;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+footer {
+  color: white;
+}
+
+footer a:link, footer a:hover, footer a:active, footer a:visited {
+  color: navajowhite;
+}
+
+.opacityLevel {
+  opacity: 0.6;
+}
+
+#switch {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.weatherText {
+  font-size: 3rem;
+}
+
+#adblockWarning {
+  color: tomato;
+  font-size: 3rem;
+}
+
+#temp.weatherText {
+  font-weight: 600;
+}

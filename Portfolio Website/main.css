@@ -1,0 +1,32 @@
+nav {
+  box-shadow: 0px 1px 3px #888888;
+}
+
+.jumbotron {
+  margin-top:45px;
+  background-image: url(img/header.png);
+  background-size: cover;
+  width:100%;
+  box-shadow: 0px 1px 3px #888888;
+}
+
+h3 {
+  margin-top:0px;
+}
+
+.htmlCol {
+  color:tomato;
+  padding-top:1%;
+  font-family: fantasy;
+}
+.cssCol {
+  color:dodgerblue;
+  padding-top:1%;
+  font-family: fantasy;
+}
+.jsCol {
+  color:#D1C200;
+  padding-top:1%;
+  font-family: fantasy;
+}
+

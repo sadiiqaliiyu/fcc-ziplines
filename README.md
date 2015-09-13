@@ -1,5 +1,5 @@
 # fcc-ziplines
-These are all of my Free Code Camp ziplines that I've completed while taking the FCC course. Please note that I had ver little experience in programming before doing these, so the code migt not always be optimal, but I try to implement what I've learned so fat to make it better! :)
+These are all of my Free Code Camp ziplines that I've completed while taking the FCC course. Please note that I had very little experience in programming before doing these, so the code might not always be optimal, but I try to implement what I've learned so fat to make it better! :)
 
 You're free to use any part of my code in your own projects. I would advise you to complete as much as possible on your own though.
 

@@ -1,0 +1,61 @@
+body {
+  background-color: #242424;
+}
+
+p {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+}
+h1 {
+  font-family: "Arial Black", sans-serif;
+  margin-bottom: 4rem;
+  color: darkgrey;
+}
+
+#timerText {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+#battery{
+    position: relative;
+    height: 30rem;
+    width: 15rem;
+    margin: auto;
+    overflow: hidden;
+    line-height: 30rem;
+    text-align: center;
+    color: #fff;
+    outline: 0.2rem solid #666;
+}
+
+#battery span{
+    position: absolute;
+    top: 0; left: 0;
+    height: 29.3rem;
+    width: 14.3rem;
+    margin: 0.3rem 0 0 0.3rem;
+    z-index: -1;
+    background-color: #58b036;
+    transform:scaleY(0);
+    transform-origin: 50% 100%;
+}
+
+#batteryTop {
+    height: 2rem;
+    width: 5rem;
+    margin: auto;
+    margin-top: 2rem;
+    border: 0.2rem solid #666;
+}
+
+#breakButton {
+  margin-top: 3rem;
+}
+
+.glyphicon-flash {
+  font-size: 7rem;
+  color: #dbc157;
+}

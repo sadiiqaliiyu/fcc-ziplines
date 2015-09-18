@@ -28,42 +28,45 @@ $(document).ready(function () {
     $('button').prop('disabled', false);
   });
   
+  function buttonTrue() {
+    // Disable the button to prevent multiple intervals
+    $mainButton.prop('disabled', true);
+      
+    // Start new interval
+    timerInterval = setInterval(function () {
+      if (chargeTimer < 10) {
+        countUp();
+      } else if (chargeTimer >= 10) {
+        clearInterval(timerInterval);
+        buttonValue = false;
+        $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
+        $mainButton.prop('disabled', false);
+      }
+    }, 1000);
+  }
+  
+  function buttonFalse() {
+    // Disable the button to prevent multiple intervals
+    $mainButton.prop('disabled', true);
+    
+    // Start new interval
+    timerInterval = setInterval(function () {
+      if (chargeTimer > 0) {
+        countDown();
+      } else if (chargeTimer <= 0) {
+        clearInterval(timerInterval);
+        buttonValue = true;
+        $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
+        $mainButton.prop('disabled', false);
+      }
+    }, 1000);
+  }
+  
   $mainButton.click(function () {
-
     if (buttonValue === true) {
-      
-      // Disable the button to prevent multiple intervals
-      $mainButton.prop('disabled', true);
-      
-      // Start new interval
-      timerInterval = setInterval(function () {
-        if (chargeTimer < 10) {
-          console.log(timerInterval);
-          countUp();
-        } else if (chargeTimer >= 10) {
-          clearInterval(timerInterval);
-          buttonValue = false;
-          $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
-          $mainButton.prop('disabled', false);
-        }
-      }, 1000);
-      
+      buttonTrue();
     } else {
-      
-      // Disable the button to prevent multiple intervals
-      $mainButton.prop('disabled', true);
-      
-      // Start new interval
-      timerInterval = setInterval(function () {
-        if (chargeTimer > 0) {
-          countDown();
-        } else if (chargeTimer <= 0) {
-          clearInterval(timerInterval);
-          buttonValue = true;
-          $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
-          $mainButton.prop('disabled', false);
-        }
-      }, 1000);
+      buttonFalse();
     }
   });
 });

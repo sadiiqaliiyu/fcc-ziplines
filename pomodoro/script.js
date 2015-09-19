@@ -23,14 +23,19 @@ $(document).ready(function () {
     $fillDiv.html(chargeTimer);
   }
   
+  /*
+  // Emergency stop
   $('#breakButton').click(function () {
     clearInterval(timerInterval);
     $('button').prop('disabled', false);
   });
+  */
   
   function buttonTrue() {
     // Disable the button to prevent multiple intervals
-    $mainButton.prop('disabled', true);
+    clearInterval(timerInterval);
+    buttonValue = false;
+    $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
       
     // Start new interval
     timerInterval = setInterval(function () {
@@ -38,16 +43,15 @@ $(document).ready(function () {
         countUp();
       } else if (chargeTimer >= 10) {
         clearInterval(timerInterval);
-        buttonValue = false;
-        $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
-        $mainButton.prop('disabled', false);
       }
     }, 1000);
   }
   
   function buttonFalse() {
     // Disable the button to prevent multiple intervals
-    $mainButton.prop('disabled', true);
+    clearInterval(timerInterval);
+    buttonValue = true;
+    $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
     
     // Start new interval
     timerInterval = setInterval(function () {
@@ -55,9 +59,6 @@ $(document).ready(function () {
         countDown();
       } else if (chargeTimer <= 0) {
         clearInterval(timerInterval);
-        buttonValue = true;
-        $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
-        $mainButton.prop('disabled', false);
       }
     }, 1000);
   }

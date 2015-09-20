@@ -9,17 +9,18 @@ $(document).ready(function () {
     $fillDiv = $('#battery div'),
     buttonValue = true,
     timerInterval,
+    batteryMax = 3600,
     chargeTimer = 0;
   
   function countUp() {
     chargeTimer += 1;
-    $span.css('transform', 'scaleY(' + chargeTimer / 10 + ')');
+    $span.css('transform', 'scaleY(' + chargeTimer / batteryMax + ')');
     $fillDiv.html(chargeTimer);
   }
   
   function countDown() {
-    chargeTimer -= 1;
-    $span.css('transform', 'scaleY(' + chargeTimer / 10 + ')');
+    chargeTimer -= 3;
+    $span.css('transform', 'scaleY(' + chargeTimer / batteryMax + ')');
     $fillDiv.html(chargeTimer);
   }
   
@@ -31,43 +32,49 @@ $(document).ready(function () {
   });
   */
   
-  function buttonTrue() {
-    // Disable the button to prevent multiple intervals
-    clearInterval(timerInterval);
-    buttonValue = false;
-    $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
-      
-    // Start new interval
-    timerInterval = setInterval(function () {
-      if (chargeTimer < 10) {
-        countUp();
-      } else if (chargeTimer >= 10) {
-        clearInterval(timerInterval);
-      }
-    }, 1000);
-  }
   
-  function buttonFalse() {
-    // Disable the button to prevent multiple intervals
-    clearInterval(timerInterval);
-    buttonValue = true;
-    $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
+  // This function reverses the battery fill and
+  // Changes the button color/text.
+  function buttonSwitch() {
     
-    // Start new interval
-    timerInterval = setInterval(function () {
-      if (chargeTimer > 0) {
-        countDown();
-      } else if (chargeTimer <= 0) {
-        clearInterval(timerInterval);
-      }
-    }, 1000);
+    clearInterval(timerInterval);
+    switch (buttonValue) {
+    
+    // If buttonValue is True.
+    case true:
+      buttonValue = false;
+      $mainButton.removeClass('btn-primary').addClass('btn-danger').text('Discharge');
+      
+      // Start new interval
+      timerInterval = setInterval(function () {
+        if (chargeTimer < batteryMax) {
+          countUp();
+        } else if (chargeTimer >= batteryMax) {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
+        
+      break;
+      
+    // If buttonValue is False.
+    case false:
+      buttonValue = true;
+      $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Charge');
+        
+      timerInterval = setInterval(function () {
+        if (chargeTimer >= 3) {
+          countDown();
+        } else if (chargeTimer < 3) {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
+        
+      break;
+    }
   }
   
+  // This is the main Charge/Discharge button.
   $mainButton.click(function () {
-    if (buttonValue === true) {
-      buttonTrue();
-    } else {
-      buttonFalse();
-    }
+    buttonSwitch();
   });
 });

@@ -2,12 +2,6 @@ body {
   background-color: #242424;
 }
 
-p {
-  margin: 0;
-  color: white;
-  font-weight: 600;
-  font-size: 2rem;
-}
 h1 {
   font-family: "Arial Black", sans-serif;
   margin-bottom: 4rem;
@@ -53,6 +47,13 @@ h1 {
 
 #breakButton {
   margin-top: 3rem;
+}
+
+.bottom {
+  color: lightgrey;
+  width: 60%;
+  padding-top: 1rem;
+  margin: 0 auto;
 }
 
 .glyphicon-flash {

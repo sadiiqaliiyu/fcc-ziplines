@@ -2,9 +2,16 @@ body {
   background-color: #242424;
 }
 
-h1 {
+h1, h3, h4 {
   font-family: "Arial Black", sans-serif;
-  margin-bottom: 4rem;
+  color: lightgrey;
+}
+
+h4 {
+  margin: 2rem 0 0 0;
+}
+
+p, div {
   color: darkgrey;
 }
 
@@ -25,14 +32,13 @@ h1 {
     outline: 0.2rem solid #666;
 }
 
-#battery span{
+#filler{
     position: absolute;
     top: 0; left: 0;
     height: 29.3rem;
     width: 14.3rem;
     margin: 0.3rem 0 0 0.3rem;
     z-index: -1;
-    background-color: #58b036;
     transform:scaleY(0);
     transform-origin: 50% 100%;
 }
@@ -45,15 +51,22 @@ h1 {
     border: 0.2rem solid #666;
 }
 
-#breakButton {
-  margin-top: 3rem;
+#resetButton {
+  margin-top: 2.5rem;
+}
+
+#mainButton {
+  margin-top: 2.5rem;
 }
 
 .bottom {
-  color: lightgrey;
   width: 60%;
   padding-top: 1rem;
   margin: 0 auto;
+}
+
+#totalWork, #totalBreak {
+  font-weight: 600;
 }
 
 .glyphicon-flash {

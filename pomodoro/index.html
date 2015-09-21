@@ -13,27 +13,46 @@
       <div class="row">
       <h1>Wulkan Battery</h1>
         
-        <div class="row">
-          <button type="button" id="mainButton" class="btn btn-primary">Charge</button>
-        </div>
-        
         <div id="batteryTop"></div>
         <div id="battery">
-          <div id="timerText"></div>
-          <span></span>
+          <div id="timerText">0.0%</div>
+          <span id="filler"></span>
         </div>
       </div><!-- /row -->
       
-      <!--<span class="glyphicon glyphicon-flash"></span>
-      <div class="row">
-        <button type="button" id="breakButton" class="btn btn-default">Emergency Stop!</button>
-      </div>-->
+      <!--<span class="glyphicon glyphicon-flash"></span>-->
       
-      <p class="bottom">The battery can hold a 60 minute charge, giving you 20 minutes of break. You can take a break at any time, if you have enough battery charge.</p>
+      <div class="row">
+          <button type="button" id="mainButton" class="btn btn-primary">Start Working</button>
+      </div>
+      
+      <div class="row">
+        <h3>Your Stats:</h3>
+        <div><span id="totalWork">0</span> Minutes of Work</div>
+        <div><span id="totalBreak">0</span> Minutes of Break</div>
+      </div>
+      
+      <div class="row">
+        <h4>About</h4>
+        <p class="bottom">
+          The battery can hold a 60 minute charge, giving you 20 minutes of break. You can take a break at any time, if you have enough battery charge.
+        </p>
+      </div>
+      
+      <!--
+      <div class="row">
+        <button type="button" id="resetButton" class="btn btn-default">
+          Empty Battery
+        </button>
+        <p class="bottom">
+          Warning, Your charge will be reset!
+        </p>
+      </div>
+      -->
     </div><!-- /container -->
     
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
   </body>

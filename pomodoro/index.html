@@ -15,7 +15,7 @@
         
         <div id="batteryTop"></div>
         <div id="battery">
-          <div id="timerText">0.0%</div>
+            <div id="timerText">0.0%</div><br>
           <span id="filler"></span>
         </div>
       </div><!-- /row -->
@@ -34,26 +34,29 @@
       
       <div class="row">
         <h4>About</h4>
-        <p class="bottom">
-          The battery can hold a 60 minute charge, giving you 20 minutes of break. You can take a break at any time, if you have enough battery charge.
+        <p class="containText">
+          The battery holds a <span id="displayMinutes">60</span> minute charge, giving you about <span id="displayBreak">15</span> minutes of break when full. Take breaks at any time during charging.
         </p>
       </div>
       
-      <!--
+      
       <div class="row">
-        <button type="button" id="resetButton" class="btn btn-default">
-          Empty Battery
+        <h4>Change Battery Minutes</h4>
+        <p class="bottom">Changing time resets the battery!</p>
+        <button type="button" id="subtractMinutes" class="btn btn-default">
+          - 5 Min
         </button>
-        <p class="bottom">
-          Warning, Your charge will be reset!
-        </p>
+        <button type="button" id="addMinutes" class="btn btn-default">
+          + 5 Min
+        </button>
       </div>
-      -->
+      
     </div><!-- /container -->
     
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <audio id="lowBattery" src="lowbattery.mp3" preload="auto"></audio>
   </body>
 </html>

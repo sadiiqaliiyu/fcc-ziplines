@@ -156,6 +156,8 @@ $(document).ready(function () {
     $timerText.html('0.0%');
     $mainButton.removeClass('btn-danger').addClass('btn-primary').text('Start Working');
     buttonValue = true;
+    $totalBreak.html(breakStorage);
+    $totalWork.html(minuteStorage);
     $('#displayMinutes').html(batteryMax / 60);
     $('#displayBreak').html(Math.ceil((batteryMax / 60) / secondsDecreased));
   }

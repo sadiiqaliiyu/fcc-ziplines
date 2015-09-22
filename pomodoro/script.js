@@ -23,7 +23,8 @@ $(document).ready(function () {
     secondsDecreased = 4,
     batteryPercentage = (batteryMax / 100),
     timerPercentage,
-    batterySound = false;
+    batterySoundLow = false,
+    batterySoundMax = false;
   
   // Handles the timer counting up and down, plus converting to percentage.
   function countUpDown() {
@@ -38,6 +39,12 @@ $(document).ready(function () {
         $totalWork.html(minuteStorage);
         minuteCounter = 0;
       }
+      
+      if (chargeTimer === batteryMax && batterySoundMax) {
+        document.getElementById('maxBattery').play();
+        batterySoundMax = false;
+      }
+      
     } else {
       chargeTimer -= 3;
       
@@ -50,15 +57,19 @@ $(document).ready(function () {
         breakCounter = 0;
       }
       
-      if (chargeTimer < batteryLow && batterySound) {
+      if (chargeTimer < batteryLow && batterySoundLow) {
         document.getElementById('lowBattery').play();
-        batterySound = false;
+        batterySoundLow = false;
       }
     }
     $filler.css('transform', 'scaleY(' + chargeTimer / batteryMax + ')');
     timerPercentage = (chargeTimer / batteryPercentage).toFixed(1);
     
-    $timerText.html(timerPercentage + '%');
+    if (chargeTimer === batteryMax) {
+      $timerText.html('100%');
+    } else {
+      $timerText.html(timerPercentage + '%');
+    }
   }
   
   // Changes the charge color (red, orange, green)
@@ -124,6 +135,8 @@ $(document).ready(function () {
     batteryPercentage = (batteryMax / 100);
     batteryMid = batteryMax / 2;
     batteryLow = batteryMax / 5;
+    minuteStorage = 0;
+    breakStorage = 0;
   }
   
   //Makes sure that the battery is calculating the percentage
@@ -158,6 +171,7 @@ $(document).ready(function () {
   // This is the main Work/Break button.
   $mainButton.click(function () {
     buttonSwitch();
-    batterySound = true;
+    batterySoundLow = true;
+    batterySoundMax = true;
   });
 });

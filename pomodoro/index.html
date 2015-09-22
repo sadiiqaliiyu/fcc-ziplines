@@ -26,19 +26,13 @@
           <button type="button" id="mainButton" class="btn btn-primary">Start Working</button>
       </div>
       
+      <hr>
+      
       <div class="row">
         <h3>Your Stats:</h3>
         <div><span id="totalWork">0</span> Minutes of Work</div>
         <div><span id="totalBreak">0</span> Minutes of Break</div>
       </div>
-      
-      <div class="row">
-        <h4>About</h4>
-        <p class="containText">
-          The battery holds a <span id="displayMinutes">60</span> minute charge, giving you about <span id="displayBreak">15</span> minutes of break when full. Take breaks at any time during charging.
-        </p>
-      </div>
-      
       
       <div class="row">
         <h4>Change Battery Minutes</h4>
@@ -51,6 +45,14 @@
         </button>
       </div>
       
+      <div class="row">
+        <h4>About</h4>
+        <p class="containText">
+          The battery holds a <span id="displayMinutes">60</span> minute charge, giving you about <span id="displayBreak">15</span> minutes of break when full. Take breaks at any time during charging. Try to keep the battery from being depleted, or it will reset your stats!
+        </p>
+        <p><a href="https://github.com/AlexWulkan/fcc-ziplines/tree/master/pomodoro" target="_blank">Check Out The Code</a></p>
+      </div>
+      
     </div><!-- /container -->
     
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -58,5 +60,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <audio id="lowBattery" src="lowbattery.mp3" preload="auto"></audio>
+    <audio id="maxBattery" src="maxbattery.mp3" preload="auto"></audio>
   </body>
 </html>
